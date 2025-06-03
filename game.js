@@ -82,21 +82,33 @@ function initBoard() {
             tile.dataset.y = y;
 
             // Add cover to specific tiles
-            if (CONFIG.objectiveTiles.some(pos => pos[0] === x && pos[1] === y)) {
-                tile.classList.add('objective');
-            } else if (CONFIG.gameMode === 1) {
+            if (CONFIG.gameMode === 1) {
+                if (CONFIG.objectiveTiles.some(pos => pos[0] === x && pos[1] === y)) {
+                    tile.classList.add('objective');
+                }
                 if (CONFIG.coverTiles.some(pos => pos[0] === x && pos[1] === y)) {
                     tile.classList.add('cover');
                 } else if (CONFIG.obstacleTiles.some(pos => pos[0] === x && pos[1] === y)) {
                     tile.classList.add('grass');
                 }
             } else {
+                const centerStartX = Math.floor(CONFIG.boardWidth * 0.3);
+                const centerEndX = Math.floor(CONFIG.boardWidth * 0.7);
+                const centerStartY = Math.floor(CONFIG.boardHeight * 0.3);
+                const centerEndY = Math.floor(CONFIG.boardHeight * 0.7);
                 if (Math.random() > 0.8) {
                     CONFIG.obstacleTiles.push([x, y]);
                     tile.classList.add('grass');
                 } else if (Math.random() > 0.95) {
                     CONFIG.coverTiles.push([x, y]);
                     tile.classList.add('cover');
+                } else if (
+                    x >= centerStartX && x <= centerEndX &&
+                    y >= centerStartY && y <= centerEndY &&
+                    Math.random() > 0.95
+                ) {
+                    CONFIG.objectiveTiles.push([x, y]);
+                    tile.classList.add('objective');
                 }
             }
 
