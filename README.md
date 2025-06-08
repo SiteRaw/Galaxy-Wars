@@ -10,3 +10,5 @@ An epic turn-based strategy battle game in space from SiteRaw Projects https://w
 - 25 special abilities
 
 The best turn-based strategy battle game. Play for free https://www.siteraw.com/galaxy
+
+Other links: [Unit Guide](https://www.siteraw.com/galaxy/units) and [Complete rules](https://www.siteraw.com/galaxy/rules)
