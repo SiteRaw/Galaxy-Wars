@@ -1,6 +1,8 @@
-# Galaxy Wars
+# Galaxy Wars Strategy Game
 
 An epic turn-based strategy battle game in space from SiteRaw Projects https://www.siteraw.com
+
+![Screenshot of Galaxy Wars Strategy Game](https://raw.githubusercontent.com/SiteRaw/Galaxy-Wars/refs/heads/main/galaxy-wars.png)
 
 - Over 100+ units
 - 187 distinct weapons
